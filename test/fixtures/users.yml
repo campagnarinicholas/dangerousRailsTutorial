@@ -1,2 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 # Fixtures: Organizing data that you want to test against; sample data. 
+michael:
+    name: Michael Example
+    email: michael@example.com
+    password_digest: <%= User.digest('password') %>
