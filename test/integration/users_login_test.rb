@@ -4,6 +4,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   
   def setup
     @user = users(:michael)
+    @other_user = users(:archer)
   end 
   
   test "login with invalid information" do
@@ -49,5 +50,17 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     # Log in again and verify the cookie is deleted
     log_in_as(@user, remember_me: '0')
     assert_empty cookies[:remember_token], assigns(:user).remember_token
+  end
+  
+  test "should not allow admin attribute to be edited via web" do
+    log_in_as(@other_user)
+    assert_not @other_user.admin?
+    patch user_path(@other_user), params: {
+                                    user: {
+                                      password: "password",
+                                      password_confirmation: "password",
+                                      admin: true
+                                    }}
+    assert_not @other_user.reload.admin?
   end
 end
