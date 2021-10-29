@@ -49,7 +49,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     log_in_as(@user, remember_me: '1')
     # Log in again and verify the cookie is deleted
     log_in_as(@user, remember_me: '0')
-    assert_empty cookies[:remember_token], assigns(:user).remember_token
+    assert_empty cookies[:remember_token]#, assigns(:user).remember_token
   end
   
   test "should not allow admin attribute to be edited via web" do
