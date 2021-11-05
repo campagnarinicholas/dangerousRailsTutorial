@@ -1,0 +1,19 @@
+current directory: /home/ubuntu/environment/sample_app/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.12/ext/mri
+/home/ubuntu/.rvm/rubies/ruby-2.7.3/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-2.7.3/lib/ruby/2.7.0 -r ./siteconf20211105-22230-zq23x9.rb extconf.rb
+creating Makefile
+
+current directory: /home/ubuntu/environment/sample_app/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/ubuntu/environment/sample_app/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/ubuntu/environment/sample_app/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.12/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20211105-22230-znt5s0
